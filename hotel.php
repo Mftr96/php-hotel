@@ -1,4 +1,5 @@
 <?php
+$parcheggio = $_GET["park"];
 //array hotel
 $hotels = [
 
@@ -39,7 +40,7 @@ $hotels = [
     ],
 
 ];
-
+// richiamo i dati dalla pagina form 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,18 +63,29 @@ $hotels = [
     ?>
     </pre>
     <ul class="row m-0">
-            <?php
-            foreach ($hotels as $hotel) {
-                echo "<li class=' col-4 bg-warning'>". $hotel['name'] . ' ' .  "</li>"; 
-                echo "<li class=' col-4 bg-success'>". $hotel['description']. ' ' . "</li>";
-                echo "<li class=' col-4 bg-primary'>". $hotel['vote']. ' ' . "</li>";
-
-            };
-            ?>
-
+        <?php
+        foreach ($hotels as $hotel) {
+            echo "<li class=' col-4 bg-warning'>" . $hotel['name'] . ' ' .  "</li>";
+            echo "<li class=' col-4 bg-success'>" . $hotel['description'] . ' ' . "</li>";
+            echo "<li class=' col-4 bg-primary'>" . $hotel['vote'] . ' ' . "</li>";
+         
+        };
+        ?>
     </ul>
-  
+    <h1>ecco gli hotel selezionati: </h1>
 
+    <ul class="row m-0">
+        <?php
+        foreach ($hotels as $hotel) {
+            if($parcheggio==$hotel['parking']){
+                echo "<li class=' col-4 bg-warning'>" . $hotel['name'] . ' ' .  "</li>";
+                echo "<li class=' col-4 bg-success'>" . $hotel['description'] . ' ' . "</li>";
+                echo "<li class=' col-4 bg-primary'>" . $hotel['vote'] . ' ' . "</li>";
+            }
+         
+        };
+        ?>
+    </ul>
 </body>
 
 </html>
