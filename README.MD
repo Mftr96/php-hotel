@@ -33,6 +33,8 @@ cosa mi serve:
 dopo aver importato l'array ad inizio pagina vado a stampare i componenti in html.
 Il modo più semplice è tramite var_dump inserendo nella parentesi l'array 
 
+dopo aver fatto una stampa semplice di array, provo in un div a ciclare gli elementi dell'array $hotel facendo apprarire in un tag pre i vari indici separati dell'array hotel
+
 
 
 
